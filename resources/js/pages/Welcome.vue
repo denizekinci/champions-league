@@ -28,7 +28,7 @@ withDefaults(
             <nav class="flex items-center justify-end gap-4">
                 <Link
                     v-if="$page.props.auth.user"
-                    href="/dashboard"
+                    href="/tournament/teams"
                     class="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
                 >
                     Dashboard
@@ -73,7 +73,7 @@ withDefaults(
                         <!-- Logged-in users go directly to the tournament flow -->
                         <Link
                             v-if="$page.props.auth.user"
-                            href="/dashboard"
+                            href="/tournament/teams"
                             class="inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow hover:opacity-90"
                         >
                             Open Tournament
