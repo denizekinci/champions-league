@@ -1,0 +1,32 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Teams represent static tournament participants.
+     * `power` acts as the primary rating input for score simulation.
+     */
+    public function up(): void
+    {
+        Schema::create('teams', function (Blueprint $table) {
+            $table->id();
+
+            // Unique team name ensures no duplicates in tournaments.
+            $table->string('name')->unique();
+
+            // Power rating used by MatchSimulator – kept intentionally small unsigned int.
+            $table->unsignedInteger('power')->default(50);
+
+            $table->timestamps();
+        });
+    }
+
+    public function down(): void
+    {
+        Schema::dropIfExists('teams');
+    }
+};
