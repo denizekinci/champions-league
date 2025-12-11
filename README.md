@@ -1,6 +1,10 @@
 # Champions League Group Simulation
 
-A small application built with **Laravel**, **PostgreSQL**, and **Vue 3 + Inertia**.
+A small application built with **Laravel 12**, **PostgreSQL**, and **Vue 3 + Inertia**.
+
+> 🎮 **Live Demo**  
+> You can try the running version of the application here:  
+>  **https://cl.denizekinci.dev/tournament/teams**
 
 The app simulates a 4-team Champions League–style group:
 - Double round-robin fixture generation
@@ -418,4 +422,10 @@ Example expectation from `PredictionWindowTest`:
   The repository initially included CI (lint + tests) from the boilerplate.
   Since this case does not focus on CI/CD, and because full CI setup for a Laravel app would require database orchestration on GitHub runners, Actions were intentionally disabled to avoid unnecessary red pipelines.
   Local tests (Pest) are fully working and documented in the README.
-  
+
+## Deployment
+
+- Provider: Hetzner Cloud (VPS)
+- Stack: Laravel 12 + Sail (local) / Nginx + PHP-FPM (prod) + PostgreSQL
+- Frontend: Vite + Inertia.js + Vue 3
+- Production URL: https://cl.denizekinci.dev/tournament/teams
